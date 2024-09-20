@@ -34,9 +34,9 @@ class MakeSql:
             add_sel, add_join = self.create_addons(table_name)
             s = f'SELECT {table_name}.*{add_sel} FROM {table_name}{add_join}'
             if get_all == DEACTIVATED_ONLY:
-                s += ' WHERE {table_name}.is_active = 0'
+                s += f' WHERE {table_name}.is_active = 0'
             elif get_all == ACTIVE_ONLY:
-                s += ' WHERE {table_name}.is_active = 1'
+                s += f' WHERE {table_name}.is_active = 1'
         else:
             s = f'SELECT * FROM {table_name}'
             if get_all == DEACTIVATED_ONLY:
