@@ -172,7 +172,7 @@ class Table(QTableView, ProtoWidget):
     valueSelected = pyqtSignal(dict)
     valueDoubleCklicked = pyqtSignal(dict)
     tableChanged = pyqtSignal()
-    def __init__(self, data_model):
+    def __init__(self, data_model: TableModel):
         super().__init__()
         self.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Interactive)
         self.horizontalHeader().setStretchLastSection(True)
@@ -283,7 +283,7 @@ class DTable(QWidget):
         ft = Item(self._table._model.name)
         err = ft.get_all()
         if not err:
-            self.field_type_tab.set_values(ft.values)
+            self._table.set_values(ft.values)
         
 
     def add_buttons(self, buttons=TABLE_BUTTONS):
