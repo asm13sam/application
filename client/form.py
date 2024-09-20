@@ -120,9 +120,7 @@ class CustomForm(QWidget, ProtoWidget):
     def get_value(self):
         for k in self.widgets:
             v = self.widgets[k].value()
-            if self.model[k]['form'] == 2 and not v:
-                error(f'Не обрано {self.model[k]["hum"]}')
-                return False
+            # check if value set
             self.value[k] = v
         self.saveRequested.emit(self.value)
         return True
@@ -219,6 +217,7 @@ class LabelWidget(QLabel):
     valChanged = pyqtSignal()
     def __init__(self):
         super().__init__()
+        self.id = 0
 
     def setValue(self, value: int):
         self.id = value
