@@ -1,0 +1,37 @@
+{
+    "s_field_type": {
+        "fields": {
+            "id": {"def": 0},
+            "name": {"def": ""},
+            "hum": {"def": ""},
+            "is_active": {"def": true}
+        }
+    },
+    "s_category": {
+        "fields": {
+            "id": {"def": 0},
+            "name": {"def": ""},
+            "hum": {"def": ""},
+            "is_active": {"def": true}
+        }
+    },
+    "s_model": {
+        "fields": {
+            "id": {"def": 0},
+            "name": {"def": ""},
+            "hum": {"def": ""},
+            "s_category_id": {"def": 0},
+            "is_active": {"def": true}
+        }
+    },
+    "s_field": {
+        "fields": {
+            "id": {"def": 0},
+            "name": {"def": ""},
+            "hum": {"def": ""},
+            "s_field_type_id": {"def": 0},
+            "s_model_id": {"def": 0},
+            "is_active": {"def": true}
+        }
+    }
+}

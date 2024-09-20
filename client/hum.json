@@ -1,0 +1,41 @@
+{
+    "s_field_type": {
+        "hum": "Тип поля",
+        "fields": {
+            "id": {"hum": "Номер"},
+            "name": {"hum": "Назва"},
+            "hum": {"hum": "Заголовок"},
+            "is_active": {"hum": "Діючий"}
+        }
+    },
+    "s_category": {
+        "hum": "Категорія",
+        "fields": {
+            "id": {"hum": "Номер"},
+            "name": {"hum": "Назва"},
+            "hum": {"hum": "Заголовок"},
+            "is_active": {"hum": "Діючий"}
+        }
+    },
+    "s_model": {
+        "hum": "Модель",
+        "fields": {
+            "id": {"hum": "Номер"},
+            "name": {"hum": "Назва в базі"},
+            "hum": {"hum": "Назва"},
+            "s_category_id": {"hum": "Категорія"},
+            "is_active": {"hum": "Діючий"}
+        }
+    },
+    "s_field": {
+        "hum": "Поле",
+        "fields": {
+            "id": {"hum": "Номер"},
+            "name": {"hum": "Назва"},
+            "hum": {"hum": "Заголовок"},
+            "s_field_type_id": {"hum": "Тип поля"},
+            "s_model_id": {"hum": "Модель"},
+            "is_active": {"hum": "Діючий"}
+        }
+    }
+}

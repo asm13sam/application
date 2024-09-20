@@ -1,0 +1,5 @@
+bottle.py
+__pycache__
+*.db
+config.json
+others
