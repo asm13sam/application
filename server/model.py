@@ -120,3 +120,11 @@ class MakeSql:
                 add_join += f'\n\tLEFT JOIN {foring_table_name} ON {table_name}.{f} = {foring_table_name}.id'
 
         return add_sel, add_join
+
+
+    def create_order(self, contact, contact_type, svg_data):
+        print("contact", contact)
+        print("contact_type", contact_type)
+        with open ('maket_new.svg', "w") as f:
+            f.write(svg_data)
+        return {'error': '', 'value': 'Sucsess'}
