@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 from bottle import Bottle, response, request
+# -*- coding: utf-8 -*-
+
 import json
 import sqlite3
 import model
@@ -25,7 +27,7 @@ with open ('config.json', "r") as f:
 def get_item(table_name, uid):
     extended = request.query.short != SHORT_FORM
     return repo.get(table_name, uid, extended)
-    
+
 @app.route('/api/<table_name>')
 def get_list(table_name):
     extended = request.query.short != SHORT_FORM
@@ -42,13 +44,22 @@ def create_measure(table_name):
 @app.put('/api/<table_name>/<uid:int>')
 def update_measure(table_name, uid):
     data = request.json
-    return repo.update(table_name, data, uid)    
+    return repo.update(table_name, data, uid)
 
 @app.delete('/api/<table_name>/<uid:int>/')
 def delete(table_name, uid):
     if request.query.delete == REAL_DELETE:
         return repo.delete(table_name, uid)
     return repo.deactivate(table_name, uid)
+
+@app.post('/create_order')
+def create_order():
+    print('creating order...')
+    contact = request.forms.contact
+    contact_type = request.forms.contact_type
+    svg_data = request.forms.svg_data
+    return repo.create_order(contact, contact_type, svg_data)
+
 
 
 app.run(debug=True, reloader=True, port=cfg['port'], host="0.0.0.0")
